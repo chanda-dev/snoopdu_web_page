@@ -10,6 +10,12 @@ import MakerSpace from "./image/maker_space.png";
 import Curriculumn from "./image/curriculum.png";
 import Transformation from "./image/tranformation.png";
 import Founder from "./image/founder.jpg";
+import IntroToCs from "./image/intro_to_cs.png";
+import AAIntro from "./image/aaIntro.png";
+import DsIntro from "./image/dsintro.jpg";
+import MlIntro from "./image/mlIntro.jpg";
+import PyDs from "./image/pyDs.jpg";
+import Word2Vec from "./image/word2vec.png";
 export const assets = {
   Logo,
   Banner_1,
@@ -23,4 +29,10 @@ export const assets = {
   Curriculumn,
   Transformation,
   Founder,
+  IntroToCs,
+  AAIntro,
+  DsIntro,
+  MlIntro,
+  PyDs,
+  Word2Vec,
 };

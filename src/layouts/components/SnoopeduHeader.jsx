@@ -33,6 +33,14 @@ const SnoopeduHeader = () => {
       </ScrollLink>
       <div className="flex justify-around w-[40%] font-semibold">
         <ScrollLink
+          to="course"
+          smooth={true}
+          duration={500}
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
+          <p>Course</p>
+        </ScrollLink>
+        <ScrollLink
           to="about_us"
           smooth={true}
           duration={500}
@@ -55,14 +63,6 @@ const SnoopeduHeader = () => {
           className="hover:underline hover:decoration-2 cursor-pointer"
         >
           <p>Contact</p>
-        </ScrollLink>
-        <ScrollLink
-          to="course"
-          smooth={true}
-          duration={500}
-          className="hover:underline hover:decoration-2 cursor-pointer"
-        >
-          <p>Course</p>
         </ScrollLink>
       </div>
       <a>

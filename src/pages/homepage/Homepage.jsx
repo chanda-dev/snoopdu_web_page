@@ -8,6 +8,7 @@ import Detail from "./Detail";
 import Founder from "./Founder";
 import ContactUs from "./ContactUs";
 import Footer from "../../layouts/components/Footer";
+import Course from "./Course";
 const HomePage = () => {
   return (
     <div className="">
@@ -22,7 +23,9 @@ const HomePage = () => {
           </div>
           <ImageSlide />
         </div>
-        <section id="course"></section>
+        <section id="course">
+          <Course />
+        </section>
         <section id="about_us" className="bg-[#eefbff] px-[10%] mt-[10%]">
           <AboutUs />
         </section>
