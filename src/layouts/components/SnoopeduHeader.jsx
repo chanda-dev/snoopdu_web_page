@@ -1,13 +1,14 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useState, useEffect } from "react";
 import { assets } from "../../assets/assets";
 import { FaUserCircle } from "react-icons/fa";
-import { useState, useEffect } from "react";
+import { Link as ScrollLink } from "react-scroll";
+
 const SnoopeduHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY == 0) {
+      if (window.scrollY === 0) {
         setIsScrolled(false);
       } else {
         setIsScrolled(true);
@@ -18,34 +19,55 @@ const SnoopeduHeader = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <header
       className={`${
-        isScrolled ? "bg-cream " : "bg-transparent items-center"
-      } "my-10 h-24 flex justify-around items-center sticky z-99"`}
+        isScrolled ? "bg-cream shadow-md" : "bg-transparent"
+      } fixed top-0 left-0 w-full h-20 flex items-center justify-between px-10 z-50 transition-all duration-300`}
     >
-      <Link>
-        <div className="w-[96px] h-[60px]">
-          <img src={assets.Logo} alt="Snoopedu Logo" srcset="" />
+      <ScrollLink to="home" smooth={true} duration={500}>
+        <div className="w-[96px] h-[60px] cursor-pointer">
+          <img src={assets.Logo} alt="Snoopedu Logo" />
         </div>
-      </Link>
-      <div className="flex justify-around w-[40%]  font-semibold">
-        <Link className="hover:underline hover:decoration-2">
+      </ScrollLink>
+      <div className="flex justify-around w-[40%] font-semibold">
+        <ScrollLink
+          to="about_us"
+          smooth={true}
+          duration={500}
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
           <p>About Us</p>
-        </Link>
-        <Link className="hover:underline hover:decoration-2">
+        </ScrollLink>
+        <ScrollLink
+          to="program"
+          smooth={true}
+          duration={500}
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
           <p>Programs</p>
-        </Link>
-        <Link className="hover:underline hover:decoration-2">
+        </ScrollLink>
+        <ScrollLink
+          to="contact us"
+          smooth={true}
+          duration={500}
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
           <p>Contact</p>
-        </Link>
-        <Link className="hover:underline hover:decoration-2">
+        </ScrollLink>
+        <ScrollLink
+          to="course"
+          smooth={true}
+          duration={500}
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
           <p>Course</p>
-        </Link>
+        </ScrollLink>
       </div>
-      <Link>
-        <FaUserCircle className="w-10  h-10 text-primary" />
-      </Link>
+      <a>
+        <FaUserCircle className="w-10 h-10 text-primary" />
+      </a>
     </header>
   );
 };
