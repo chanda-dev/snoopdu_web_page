@@ -12,7 +12,7 @@ import Course from "./Course";
 const HomePage = () => {
   return (
     <div className="">
-      <SnoopeduHeader />
+      {/* <SnoopeduHeader /> */}
       <div className="">
         <div className="flex items-center justify-center px-[10%] mt-[10%]">
           <div className="w-[26%] mr-7">
@@ -41,7 +41,7 @@ const HomePage = () => {
           <ContactUs />
         </section>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

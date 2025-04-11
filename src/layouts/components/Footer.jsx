@@ -19,10 +19,7 @@ const Footer = () => {
     };
   }, []);
   return (
-    <footer
-      className="bg-cream mt-10 h-[200px] flex flex-col justify-around items-center
-"
-    >
+    <footer className="bg-cream h-[200px] flex flex-col justify-center items-center mt-10">
       <div className="my-5">©Copyright 2023. All Rights Reserved.</div>
       <div className="w-[96px] h-[60px] mb-10">
         <img src={assets.Logo} alt="Snoopedu Logo" srcset="" />

@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col min-h-screen">
       <SnoopeduHeader />
-      <main className="">
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
