@@ -12,7 +12,7 @@ const CourseCard = ({
   instrutor,
 }) => {
   return (
-    <div className="w-[292px] h-[350px] border border-primary rounded-2xl cursor-pointer hover:shadow-primary hover:shadow-sm">
+    <div className=" w-[292px] h-[350px] border border-primary rounded-2xl cursor-pointer hover:shadow-primary hover:shadow-sm">
       <div>
         <img
           src={thumbnail}

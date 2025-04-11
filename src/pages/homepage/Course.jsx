@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CourseList from "../../components/CourseList";
 import { assets } from "../../assets/assets";
+import useWindowDimensions from "../../utils/useWindowDimensions";
 const Course = () => {
   const courses = [
     {
@@ -81,22 +82,24 @@ const Course = () => {
   ];
 
   return (
-    <div className="py-10 px-[5%]">
-      <div className="flex">
-        <div className="flex justify-between w-[50%]">
-          <p className="font-semibold text-[16px] underline underline-offset-5">
+    <div className="py-10">
+      <div className="flex justify-around md:justify-around">
+        <div className="flex flex-col md:flex md:flex-col lg:flex lg:flex-row">
+          <p className="font-semibold text-[16px] md:mr-5 underline underline-offset-5">
             All
           </p>
-          <p className="font-semibold text-[16px]">Development</p>
-          <p className="font-semibold text-[16px]">Data Science</p>
-          <p className="font-semibold text-[16px]">Game Development</p>
-          <p className="font-semibold text-[16px]">Fundemental Of Computer</p>
-          <p className="font-semibold text-[16px]">UX/UI design</p>
+          <p className="font-semibold text-[16px] md:mr-5">Development</p>
+          <p className="font-semibold text-[16px] md:mr-5">Data Science</p>
+          <p className="font-semibold text-[16px] md:mr-5">Game Development</p>
+          <p className="font-semibold text-[16px] md:mr-5">
+            Fundemental Of Computer
+          </p>
+          <p className="font-semibold text-[16px] md:mr-5">UX/UI design</p>
         </div>
-        <div className=" flex justify-between w-[20%] ml-[30%]">
-          <p className="font-semibold text-[16px]">Paid</p>
-          <p className="font-semibold text-[16px]">All level</p>
-          <p className="font-semibold text-[16px]">Computer Science</p>
+        <div className="flex flex-col justify-between md:flex md:flex-col lg:flex lg:flex-row">
+          <p className="font-semibold text-[16px] md:mr-5">Paid</p>
+          <p className="font-semibold text-[16px] md:mr-5">All level</p>
+          <p className="font-semibold text-[16px] md:mr-5">Computer Science</p>
         </div>
       </div>
       <div>

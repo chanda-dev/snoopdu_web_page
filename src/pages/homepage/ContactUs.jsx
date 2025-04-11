@@ -12,16 +12,16 @@ const ContactUs = () => {
         <p className="text-[20px]">
           Contact us for consultancy and partnership
         </p>
-        <div className=" flex justify-between">
-          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-[30%]">
+        <div className="flex flex-col md:flex md:flex-row md:justify-around">
+          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-auto mb-2">
             <p className="text-[20px] font-bold">Email</p>
             <p className="text-[16px]">poumsocheata@gmail.com</p>
           </div>
-          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-[30%]">
+          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-auto mb-2">
             <p className="text-[20px] font-bold">Email</p>
             <p className="text-[16px]">poumsocheata@gmail.com</p>
           </div>
-          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-[30%]">
+          <div className="bg-secondary rounded-[12px] p-[15px] min-h-[108px] w-auto">
             <p className="text-[20px] font-bold">Email</p>
             <p className="text-[16px]">poumsocheata@gmail.com</p>
           </div>

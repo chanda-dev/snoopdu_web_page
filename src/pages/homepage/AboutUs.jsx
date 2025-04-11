@@ -2,12 +2,12 @@ import React from "react";
 import PrimaryButton from "../../components/PrimaryButton";
 const AboutUs = () => {
   return (
-    <div className=" px-[10%] py-[5%]">
-      <div className=" flex h-[60%]">
-        <div className="w-[30%] mr-10">
+    <div className=" px-[5%] py-[5%]">
+      <div className=" flex flex-col h-[60%]">
+        <div className="w-auto mr-10">
           <p className="font-bold text-[40px]">Our mission</p>
         </div>
-        <div className="w-[70%]">
+        <div className="w-atuo">
           <p className=" text-[25px]">
             To bring interactive learning experiences in digital literacy and
             computer science to schools through empowering educators, developing
@@ -29,9 +29,9 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="bg-cream rounded-2xl flex justify-around items-center mt-[10%] h-[200px]">
-        <div className="  w-[60%]">
-          <p className="text-[30px] text-center">
+      <div className="bg-cream rounded-2xl flex flex-col justify-around items-center mt-[10%] h-[200px]">
+        <div className="  w-auto">
+          <p className="text-[20px] text-center">
             Want to start coding class at your school or workplace?
           </p>
         </div>

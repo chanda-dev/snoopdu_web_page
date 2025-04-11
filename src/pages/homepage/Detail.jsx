@@ -4,9 +4,9 @@ import PrimaryButton from "../../components/PrimaryButton";
 import { Link } from "react-scroll";
 const Detail = () => {
   return (
-    <div className="flex">
-      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8]  py-10 px-[5%]">
-        <div className="flex ">
+    <div className="flex flex-col md:flex md:flex-row">
+      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8]  py-10 px-[5%] sm:px-[2%]">
+        <div className="flex sm:flex sm:flex-col">
           <img
             src={assets.MakerSpace}
             alt=""
@@ -14,7 +14,7 @@ const Detail = () => {
           />
           <p className="font-semibold text-[30px]">Makerspace</p>
         </div>
-        <div className=" py-10">
+        <div className=" py-10 ">
           <p className="text-[16px] text-left">
             Students and Educators, join us in the makerspace to turn every
             ideas into tangible prototype and projects that will spark your
@@ -28,8 +28,8 @@ const Detail = () => {
           <PrimaryButton text={"Learn more..."} />
         </Link>
       </div>
-      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8] px-[5%] py-10">
-        <div className="flex">
+      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8] px-[5%] py-10 sm-px[2%]">
+        <div className="flex sm:flex sm:flex-col">
           <img
             src={assets.Curriculumn}
             alt=""
@@ -49,8 +49,8 @@ const Detail = () => {
 
         <PrimaryButton text={"Learn more..."} />
       </div>
-      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8] px-[5%] py-10">
-        <div className="flex">
+      <div className="bg-[#F1FFF2] border-r border-[#E1F1E8] px-[5%] py-10 sm:px-[2%]">
+        <div className="flex sm:flex sm:flex-col">
           <img
             src={assets.MakerSpace}
             alt=""

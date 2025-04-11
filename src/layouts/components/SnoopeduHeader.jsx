@@ -2,11 +2,18 @@ import React, { useState, useEffect } from "react";
 import { assets } from "../../assets/assets";
 import { FaUserCircle } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import ProfileOverLay from "../../components/ProfileOverLay";
-
+import useWindowDimensions from "../../utils/useWindowDimensions";
+import { MdMenu } from "react-icons/md";
 const SnoopeduHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHover, setIsHover] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { width } = useWindowDimensions();
+  useEffect(() => {
+    if (width < 768) {
+      setMenuOpen(false);
+    }
+  }, [width]);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -27,7 +34,10 @@ const SnoopeduHeader = () => {
   const handleMouseLeave = () => {
     setIsHover(false);
   };
-  return (
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+  return width > 768 ? (
     <header
       className={`${
         isScrolled ? "bg-cream shadow-md" : "bg-transparent"
@@ -38,7 +48,7 @@ const SnoopeduHeader = () => {
           <img src={assets.Logo} alt="Snoopedu Logo" />
         </div>
       </a>
-      <div className="flex justify-around w-[40%] font-semibold">
+      <div className="flex justify-around w-[60%] font-semibold">
         <ScrollLink
           to="course"
           smooth={true}
@@ -71,19 +81,94 @@ const SnoopeduHeader = () => {
         >
           <p>Contact</p>
         </ScrollLink>
+        <a
+          href="/dashboard"
+          className="hover:underline hover:decoration-2 cursor-pointer"
+        >
+          <p>Dashboard</p>
+        </a>
       </div>
-      <a
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="cursor-pointer"
-      >
+
+      <a className="cursor-pointer">
         <FaUserCircle className="w-10 h-10 text-primary" />
-        {isHover ? (
-          <div>
-            <ProfileOverLay />
-          </div>
-        ) : null}
       </a>
+    </header>
+  ) : (
+    <header className="absolute z-99">
+      {menuOpen ? (
+        <div className="bg-cream flex flex-col w-[400px] h-auto relative p-5">
+          <div className="flex justify-between">
+            <FaUserCircle className="w-10 h-10 text-primary" />
+            <a href="/" rel="noopener noreferrer">
+              <div className="w-[96px] h-[60px] cursor-pointer">
+                <img src={assets.Logo} alt="Snoopedu Logo" />
+              </div>
+            </a>
+            <MdMenu
+              className="w-[36px] h-[36px] cursor-pointer"
+              onClick={toggleMenu}
+            />
+          </div>
+
+          <div className="justify-between font-semibold">
+            <div className="m-2">
+              <ScrollLink
+                to="course"
+                smooth={true}
+                duration={500}
+                className="hover:underline hover:decoration-2 cursor-pointer"
+              >
+                <p className="bg-primary w-full p-5 rounded-[5px]">Course</p>
+              </ScrollLink>
+            </div>
+            <div className="m-2">
+              <ScrollLink
+                to="about_us"
+                smooth={true}
+                duration={500}
+                className="hover:underline hover:decoration-2 cursor-pointer"
+              >
+                <p className="bg-primary w-full p-5 rounded-[5px]">About Us</p>
+              </ScrollLink>
+            </div>
+            <div className="m-2">
+              <ScrollLink
+                to="program"
+                smooth={true}
+                duration={500}
+                className="hover:underline hover:decoration-2 cursor-pointer"
+              >
+                <p className="bg-primary w-full p-5 rounded-[5px]">Programs</p>
+              </ScrollLink>
+            </div>
+            <div className="m-2">
+              <ScrollLink
+                to="contact us"
+                smooth={true}
+                duration={500}
+                className="hover:underline hover:decoration-2 cursor-pointer"
+              >
+                <p className="bg-primary w-full p-5 rounded-[5px]">Contact</p>
+              </ScrollLink>
+            </div>
+          </div>
+          <div className="mx-2">
+            <a
+              className="hover:underline hover:decoration-2 cursor-pointer"
+              href="/dashboard"
+            >
+              <p className="bg-primary w-full p-5 rounded-[5px] font-semibold">
+                Dashboard
+              </p>
+            </a>
+          </div>
+        </div>
+      ) : (
+        <MdMenu
+          className="w-[36px] h-[36px] cursor-pointer"
+          onClick={toggleMenu}
+        />
+      )}
     </header>
   );
 };

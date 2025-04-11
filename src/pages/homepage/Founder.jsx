@@ -17,7 +17,7 @@ const Founder = () => {
       <div>
         <p className="text-[40px] font-bold">Message from the founder</p>
       </div>
-      <div className="mt-16 flex">
+      <div className="mt-16 flex flex-col sm:flex sm:flex-col sm:items-center md:flex md:flex-row">
         <img
           src={assets.Founder}
           alt=""

@@ -1,18 +1,32 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import { GrFormNext } from "react-icons/gr";
 import { GrFormPrevious } from "react-icons/gr";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import useWindowDimensions from "../../utils/useWindowDimensions";
 const Program = () => {
+  const { width } = useWindowDimensions();
   const sliderRef = useRef(null);
+  const [amountCard, setAmountCard] = useState(2); // Use state to manage amountCard
+
+  useEffect(() => {
+    if (width < 660) {
+      setAmountCard(1);
+    } else if (width < 768) {
+      setAmountCard(2);
+    } else if (width < 1024) {
+      setAmountCard(2);
+    } else {
+      setAmountCard(4);
+    }
+  }, [width]);
 
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: amountCard,
     slidesToScroll: 1,
   };
 
@@ -31,7 +45,7 @@ const Program = () => {
   };
 
   return (
-    <div className="px-[10%] py-[5%] font-bold">
+    <div className="px-[6%] py-[5%] font-bold md:px-0">
       <div>
         <p className="text-[40px]">Our Programs</p>
         <div className="flex justify-end">
@@ -53,7 +67,7 @@ const Program = () => {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="h-[323px] px-5 bg-secondary mb-10 flex justify-center items-center"
+                className="h-[323px] bg-secondary mb-5 pr-10 md:pr-5"
               >
                 <img
                   src={card.img}

@@ -13,7 +13,7 @@ const banner = [
 
 const ImageSlide = () => {
   return (
-    <div className=" w-[728px] h-[400px] rounded-2xl cursor-pointer">
+    <div className=" w-auto h-auto rounded-2xl cursor-pointer">
       <Swiper
         spaceBetween={20}
         slidesPerView={"auto"}

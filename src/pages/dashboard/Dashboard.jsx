@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   BarChart,
   CartesianGrid,
@@ -10,9 +10,23 @@ import {
   PieChart,
   Pie,
 } from "recharts";
+import useWindowDimensions from "../../utils/useWindowDimensions";
 import CourseList from "../../components/CourseList";
 import { assets } from "../../assets/assets";
 const Dashboard = () => {
+  const { width } = useWindowDimensions();
+  const [barWidth, setBarWidth] = useState(400);
+  useEffect(() => {
+    if (width < 368) {
+      setBarWidth(200);
+    } else if (width < 768) {
+      setBarWidth(500);
+    } else if (width < 1024) {
+      setBarWidth(600);
+    } else {
+      setBarWidth(728);
+    }
+  }, [width]);
   const data = [
     {
       name: "Sun",
@@ -112,15 +126,15 @@ const Dashboard = () => {
   const highest = Math.max(...data.map((item) => item.Hour));
   const lowest = Math.min(...data.map((item) => item.Hour));
   return (
-    <div className="p-[10%]">
+    <div className="p-[5%] md:pt-[10%]">
       <div>
         <p className="font-bold text-[40px] mb-10">
           Hello Chanda, Check your progress hah!
         </p>
       </div>
-      <div className="flex justify-around">
+      <div className="flex flex-col justify-around max-md:flex max-md:flex-col lg-flex lg:flex-row">
         <div>
-          <BarChart width={730} height={250} data={data}>
+          <BarChart width={barWidth} height={250} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -135,7 +149,7 @@ const Dashboard = () => {
             The lowest duration for this week:{lowest}h
           </div>
         </div>
-        <div className="w-[400px] h-[300px] border-primary border flex p-5">
+        <div className="w-[350px] h-[300px] border-primary border flex p-5">
           <div>
             <p className="text-[16px] font-bold mb-10">Courses in process</p>
             <div className="relative w-50 h-50">
